@@ -23,6 +23,8 @@ public class ShapeCollector {
     }
 
     public Shape getFigure(int n){
+        if(n<0 || n>(shapes.size()-1)){return null;
+        }else
         return shapes.get(n);
     }
 
@@ -39,5 +41,7 @@ public class ShapeCollector {
         return result;
     }
 
-    //getSize()
+    public int getShapesQuantity(){
+        return shapes.size();
+    }
 }

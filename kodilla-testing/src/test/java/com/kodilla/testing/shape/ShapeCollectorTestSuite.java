@@ -37,10 +37,10 @@ public class ShapeCollectorTestSuite {
             Circle circle = new Circle(2.5);
 
             //When
-            boolean result = shapeCollector.addFigure(circle);
+            shapeCollector.addFigure(circle);
 
             //Then
-            Assertions.assertTrue(result);
+            Assertions.assertEquals(1, shapeCollector.getShapesQuantity());
         }
 
         @Test
@@ -48,12 +48,13 @@ public class ShapeCollectorTestSuite {
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
             Square square = new Square(8.7);
+            shapeCollector.addFigure(square);
 
             //When
-            boolean result = shapeCollector.removeFigure(square);
+            shapeCollector.removeFigure(square);
 
             //Then
-            Assertions.assertTrue(result);
+            Assertions.assertEquals(0, shapeCollector.getShapesQuantity());
         }
     }
 
@@ -90,6 +91,34 @@ public class ShapeCollectorTestSuite {
 
             //Then
             Assertions.assertEquals("Circle, Square, Triangle", result);
+        }
+
+        @Test
+        void testGetFigureWithNegativeIndex() {
+            //Given
+            ShapeCollector shapeCollector = new ShapeCollector();
+            Triangle triangle = new Triangle(4.9, 5.5);
+            shapeCollector.addFigure(triangle);
+
+            //When
+            Shape result = shapeCollector.getFigure(-1);
+
+            //Then
+            Assertions.assertEquals(null, result);
+        }
+
+        @Test
+        void testGetFigureWithExceededIndex() {
+            //Given
+            ShapeCollector shapeCollector = new ShapeCollector();
+            Triangle triangle = new Triangle(4.9, 5.5);
+            shapeCollector.addFigure(triangle);
+
+            //When
+            Shape result = shapeCollector.getFigure(1);
+
+            //Then
+            Assertions.assertEquals(null, result);
         }
     }
 }
