@@ -42,7 +42,12 @@ public class ForumStatistics {
         if(postsQuantity != 0){averageCommentsPerPostQuantity = (double) commentsQuantity / (double) postsQuantity;}
     }
 
-    public String showStatistics(){
-        return "Statistics";
+    public void showStatistics(){
+        System.out.println("Users quantity: " + usersQuantity);
+        System.out.println("Posts quantity: " + postsQuantity);
+        System.out.println("Comments quantity: " + commentsQuantity);
+        System.out.println("Average posts per user: " + averagePostsPerUserQuantity);
+        System.out.println("Average comments per user: " + averageCommentsPerUserQuantity);
+        System.out.println("Average comments per post: " + averageCommentsPerPostQuantity);
     }
 }
