@@ -5,4 +5,6 @@ include 'kodilla-rps'
 include 'kodilla-exception'
 include 'newmodule'
 include 'kodill-exception'
+include 'kodilla-good-patterns'
+include 'kodilla-good-patterns'
 
