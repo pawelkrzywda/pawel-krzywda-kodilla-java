@@ -10,7 +10,7 @@ import java.util.List;
 public class Invoice {
     private int id;
     private String number;
-    List<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 
     public Invoice() {
     }
