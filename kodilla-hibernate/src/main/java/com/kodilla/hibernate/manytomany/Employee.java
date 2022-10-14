@@ -9,6 +9,10 @@ import java.util.List;
         name = "Employee.retrieveEmployeesWithLastname",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
+@NamedQuery(
+        name = "Employee.retrieveEmployeesWithPartialName",
+        query = "FROM Employee WHERE lastname LIKE :PARTNAME"
+)
 
 @Entity
 @Table(name = "EMPLOYEES")
@@ -54,8 +58,8 @@ public class Employee {
             inverseJoinColumns = {@JoinColumn(name = "COMPANY_ID", referencedColumnName = "COMPANY_ID")}
     )
     public List<Company> getCompanies() {
-            return companies;
-            }
+        return companies;
+    }
 
     private void setId(int id) {
         this.id = id;

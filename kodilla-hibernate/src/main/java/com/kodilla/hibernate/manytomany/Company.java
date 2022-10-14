@@ -6,7 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.retrieveCompaniesWhoseNameStarts",
+        name= "Company.retrieveCompaniesWithPartialName",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :PARTNAME",
+        resultClass = Company.class
+)
+@NamedNativeQuery(
+        name = "Company.retrieveCompaniesWhoseNamesStarts",
         query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME,1,3) = :PARTNAME",
         resultClass = Company.class
 )

@@ -70,7 +70,7 @@ class CompanyDaoTestSuite {
 
         //When
         companyDao.save(dataMaesters);
-        List<Company> companyList = companyDao.retrieveCompaniesWhoseNameStarts("Dat");
+        List<Company> companyList = companyDao.retrieveCompaniesWhoseNamesStarts("Dat");
 
         //Then
         assertEquals(1, companyList.size());

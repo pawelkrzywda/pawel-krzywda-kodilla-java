@@ -1,8 +1,7 @@
 package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
-import com.kodilla.hibernate.task.Task;
-import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -14,6 +13,9 @@ import java.util.List;
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
     @Query
-    List<Company> retrieveCompaniesWhoseNameStarts(@Param("PARTNAME") String partname);
+    List<Company> retrieveCompaniesWhoseNamesStarts(@Param("PARTNAME") String partname);
+
+    @Query
+    List<Company> retrieveCompaniesWithPartialName(@Param("PARTNAME") String partname);
 
 }
