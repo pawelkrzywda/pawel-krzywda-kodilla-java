@@ -22,12 +22,10 @@ public class Facade {
     }
 
     public List<Company> findCompaniesWithPartialName(String partname) {
-        partname = "%" + partname + "%";
         return companyDao.retrieveCompaniesWithPartialName(partname);
     }
 
     public List<Employee> findEmployeesWithPartialName(String partname) {
-        partname = "%" + partname + "%";
         return employeeDao.retrieveEmployeesWithPartialName(partname);
     }
 }
